@@ -1,0 +1,150 @@
+// 背景图片
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+
+//border优化   
+border-small($color,$radius)
+  position: relative
+  border none
+  @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+    &:before
+      content: ""
+      position: absolute
+      top: -50%
+      bottom: -50%
+      left: -50%
+      right: -50%
+      -webkit-transform: scale(0.7)
+      transform: scale(0.7)
+      border-style: solid
+      border-width: 1px
+      border-color: $color
+      -webkit-border-radius: $radius
+      border-radius: $radius
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+    &:before
+      content: ""
+      position: absolute
+      top: -50%
+      bottom: -50%
+      left: -50%
+      right: -50%
+      -webkit-transform: scale(0.5)
+      transform: scale(0.5)
+      border-style: solid
+      border-width: 1px
+      border-color: $color
+      -webkit-border-radius: $radius
+      border-radius: $radius
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    &:before
+      content: ""
+      position: absolute
+      top: -50%
+      bottom: -50%
+      left: -50%
+      right: -50%
+      -webkit-transform: scale(0.333)
+      transform: scale(0.333)
+      border-style: solid
+      border-width: 1px
+      border-color: $color
+      -webkit-border-radius: $radius
+      border-radius: $radius
+
+//计算flex
+flex-fix()
+  -ms-flex: 1 1 0.000000001px
+  -webkit-box-flex: 1
+  -webkit-flex: 1
+  flex: 1
+  -webkit-flex-basis: 0.000000001px
+  flex-basis: 0.000000001px
+  width: 1%
+
+//兼容处理
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+//transition兼容
+transition()
+  vendor('transition', arguments)
+
+//transform兼容
+transform()
+  vendor('transform', arguments)
+
+//上边框
+border-top-1px($color)
+  &:before
+    border-top: 1px solid $color
+
+//右边框
+border-right-1px($color)
+  &:after
+    border-right: 1px solid $color
+
+//下边框
+border-bottom-1px($color)
+  &:after
+    border-bottom: 1px solid $color
+
+//左边框
+border-left-1px($color)
+  &:before
+    border-left: 1px solid $color
+
+//公用border（同border-small）
+border-1px($color = #ccc, $radius = 2px, $style = solid)
+  position: relative
+  &:after
+    content: ""
+    pointer-events: none // 解决iphone上的点击无效Bug
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    border: 1px $style $color
+    border-radius: $radius
+    box-sizing border-box
+    width 100%
+    height 100%
+    @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+      width: 200%
+      height: 200%
+      border-radius: $radius * 2
+      transform: scale(.5) translateZ(0)
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+      width: 300%
+      height: 300%
+      border-radius: $radius * 3
+      transform: scale(.33) translateZ(0)
+
+//无边框
+border-none()
+  &:before
+    display: none
+  &:after
+    display: none

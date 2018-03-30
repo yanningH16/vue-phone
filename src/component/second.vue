@@ -1,11 +1,18 @@
 <template>
-  <div class="wrap">
-    普通组件
+  <div>
+    <div>组件2</div>
+    <h1 class="title">{{title}}</h1>
   </div>
 </template>
 <script type="text/ecmascript-6">
 export default {
-  name: 'first',
+  name: 'second',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
     }
@@ -13,7 +20,4 @@ export default {
 }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.wrap
-  color red
-  font-size 1.2rem
 </style>

@@ -15,7 +15,7 @@
 </template>
 <script type="text/ecmascript-6">
 export default {
-  name: 'nav',
+  name: 'navs',
   data () {
     return {
       isActive: 0,
@@ -92,9 +92,9 @@ export default {
     text-align center
     .navs
       color white
-      font-size 1.2rem
+      font-size 15px
     .style
-      line-height 4rem
+      line-height 40px
     .active
       background #ff3341
 </style>

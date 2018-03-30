@@ -15,5 +15,5 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .wrap
   color red
-  font-size 1.2rem
+  font-size 0.06rem
 </style>

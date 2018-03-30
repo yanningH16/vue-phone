@@ -11,7 +11,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-import NavBar from "../base/nav";
+import NavBar from "../base/navs";
 export default {
   name: "home",
   components: {
@@ -31,15 +31,15 @@ export default {
   background #E8EBF0
   position relative
   .left
-    flex 0 0 10rem
+    flex 0 0 2.5rem
     background black
   .right
-    flex 1
-    display flex
-    flex-direction column
-    overflow hidden
+    // flex 1
+    // display flex
+    // flex-direction column
+    // overflow hidden
     width 100%
     .rCont
-      flex 1
-      overflow auto
+      // flex 1
+      // overflow auto
 </style>

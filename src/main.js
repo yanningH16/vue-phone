@@ -8,10 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/stylus/index.styl';
 import YDUI from 'vue-ydui'; /* 相当于import YDUI from 'vue-ydui/ydui.rem.js' */
 import 'vue-ydui/dist/ydui.rem.css';
+import axios from 'axios'
 Vue.use(YDUI);
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
-
+Vue.prototype.$ajax=axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,7 +1,7 @@
 <template>
   <div class="a">
     重大事项审批页面测试
-    <first></first>
+    <first :text='ceshi'></first>
     <Second :title="title"></Second>
     <yd-timeline>
       <yd-timeline-item>
@@ -40,8 +40,17 @@ export default {
   },
   data () {
     return {
-      title: '组件二的传值'
+      title: '组件二的传值',
+      ceshi:'按钮'
     }
+  },
+  created(){
+    this.$ajax.get('/api/ghydbg/mos/zhfx.aspx',{
+    }).then((data)=>{
+      console.log(data)
+    }).catch(()=>{
+
+    })
   }
 }
 </script>

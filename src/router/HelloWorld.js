@@ -5,6 +5,7 @@ import notice from './notice';
 import planning from './planning';
 import search from './search';
 import statistical from './statistical';
+import err from './err';
 const Home = resolve => {
   import('../components/HelloWorld').then(module => {
     resolve(module);
@@ -31,7 +32,8 @@ const home = [
       ...notice,
       ...planning,
       ...search,
-      ...statistical
+      ...statistical,
+      ...err
     ]
   }
 ];

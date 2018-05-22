@@ -5,7 +5,9 @@
     </div>
     <div class="right">
       <div class="rCont">
-        <router-view/>
+        <transition name="fade" mode="out-in">
+         <router-view></router-view>
+        </transition>
       </div>
     </div>
   </div>
@@ -42,4 +44,8 @@ export default {
     .rCont
       // flex 1
       // overflow auto
+.fade-enter-active, .fade-leave-active
+  transition all 0.5s ease
+.fade-enter, .fade-leave-active
+  opacity 0
 </style>

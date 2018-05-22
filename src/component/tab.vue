@@ -3,14 +3,24 @@
     <ul>
       <li v-for="(item,index) in arrText" :key="index" @click="tab(index)" :class='{active:index===num}'>{{item}}</li>
     </ul>
-    <div class="text">
+    <!-- <div class="text">
       <p v-for="(items,index) in arrConten" :key="index" v-show="index===num">{{items}}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 <script type="text/ecmascript-6">
 export default {
-  name: 'planning',
+  name: 'tab',
+  props: {
+    arrText: {
+      type: Array,
+      default: []
+    },
+    arrConten:{
+      type:Array,
+      default:[]
+    }
+  },
   data () {
     return {
       arrText: ['月落', '乌啼', '霜满天', '江枫', '渔火', '对愁眠'],

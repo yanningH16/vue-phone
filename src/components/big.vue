@@ -1,6 +1,6 @@
 <template>
   <div class="a">
-    重大事项审批页面测试
+    <p @click="aaa">重大事项审批页面测试</p>
     <first :text='ceshi'></first>
     <Second :title="title"></Second>
     <yd-timeline>
@@ -41,16 +41,21 @@ export default {
   data () {
     return {
       title: '组件二的传值',
-      ceshi:'按钮'
+      ceshi: '按钮'
     }
   },
-  created(){
-    this.$ajax.get('/api/ghydbg/mos/zhfx.aspx',{
-    }).then((data)=>{
+  created () {
+    this.$ajax.get('/api/ghydbg/mos/zhfx.aspx', {
+    }).then((data) => {
       console.log(data)
-    }).catch(()=>{
+    }).catch(() => {
 
     })
+  },
+  methods: {
+    aaa () {
+      layer.msg('hello');
+    }
   }
 }
 </script>

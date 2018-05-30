@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <router-link :to="{name:'planning_open'}"><el-button>跳转吧，哈哈哈</el-button></router-link>
     <ul>
       <li v-for="(item,index) in arrText" :key="index" @click="tab(index)" :class='{active:index===num}'>{{item}}</li>
     </ul>
